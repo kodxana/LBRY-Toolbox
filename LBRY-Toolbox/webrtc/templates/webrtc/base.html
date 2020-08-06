@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+        li
+        {
+            font-size: 82%;
+        }
+        .posit
+        {
+            position:relative;
+            right:10%;
+            top:00%;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <title>LBRY Toolbox</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/hover.zoom.js"></script>
+    <script src="/static/js/hover.zoom.conf.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!-- Static navbar -->
+    
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/webrtc/index">LBRY-TOOLBOX</a>
+        </div>
+         <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+            	<div class="posit" id="google_translate_element"  ></div>
+   			 <script type="text/javascript">
+              	function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,bn,gu,hi,kn,mr,ms,ta,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+              }
+		    	</script>
+		       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	    </li>
+            <li><a href="/webrtc/view_archive">Archive</a></li>
+            <li><a href="/webrtc/about">About us</a></li>
+            <li><a href="/webrtc/contact">Contact</a></li>
+            <li><a href="/webrtc/share">Share Experience</a></li>
+            <li><a href="/webrtc/faqs">Faqs</a></li>
+	    {% if user %}
+		{% if user.is_anonymous %}
+            		<li><a href="/webrtc/index">Login</a></li>
+	    	{% else %}
+            		<li><a href="/accounts/logout/">Logout</a></li>
+            		<li>Hi {{ user }}</li>
+	    	{% endif %}
+	   {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- +++++ Welcome Section +++++ -->
+    <div id="ww" style="min-height:500px;">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-8 col-lg-offset-2 centered"> -->
+                    <!-- {% block content-image %}
+                        <img src="../../static/img/user.png" alt="Stanley">
+                    {% endblock%} -->
+                    {% block content-body%}
+  <!--                   <h1>Hi, I am Stanley!</h1>
+                    <p>Hello everybody. I'm Stanley, a free handsome bootstrap theme coded by BlackTie.co. A really simple theme for those wanting to showcase their work with a cute & clean style.</p>
+                    <p>Please, consider to register to <a href="http://eepurl.com/IcgkX">our newsletter</a> to be updated with our latest themes and freebies. Like always, you can use this theme in any project freely. Share it with your friends.</p> -->
+                    {% endblock %}
+                
+                <!-- </div>/col-lg-8 -->
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /ww -->
+    {% block image-content %}
+<!--     <div class="container pt">
+        <div class="row mt centered">   
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port01.jpg" alt="" /></a>
+                <p>APE</p>
+            </div>
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port02.jpg" alt="" /></a>
+                <p>RAIDERS</p>
+            </div>
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a>
+                <p>VIKINGS</p>
+            </div>
+        </div>
+        <div class="row mt centered">   
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt="" /></a>
+                <p>YODA</p>
+            </div>
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt="" /></a>
+                <p>EMPERORS</p>
+            </div>
+            <div class="col-lg-4">
+                <a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt="" /></a>
+                <p>CHIEFS</p>
+            </div>
+        </div>
+    </div>-->
+    {% endblock %}
+       <style>
+        div.facebook a span{
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            background: url("/static/img/social.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+        div.google a span{
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            background: url("/static/img/social.png") no-repeat scroll -78px 0 rgba(0, 0, 0, 0);
+        }
+    </style>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    {% block footer-left %} 
+					<h4><a href="/webrtc/feedback">Feedback</a><br/>
+                    </h4>
+<!--                     <p>
+                        WSB 123,<br/>
+                        +48 123 456 789, <br/>
+                        DG, Poland.
+                    </p> -->
+                    {% endblock %}
+                </div><!-- /col-lg-4 -->
+                
+                <div class="col-lg-3">
+                    {%block footer-middle %}
+                    <h4><a href="/webrtc/contact">Contact Us</a><br/></h4>
+<!--                     <p>
+                        <a href="#">Dribbble</a><br/>
+                        <a href="#">Twitter</a><br/>
+                        <a href="#">Facebook</a>
+                    </p> -->
+                    {% endblock %}
+                </div><!-- /col-lg-4 -->
+                
+                <div class="col-lg-3">
+                    {%block footer-right%}
+                    <h4><a href="/webrtc/about">About Us</a><br/></h4>
+<!--                     <p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p> -->
+                    {%endblock%}
+                </div><!-- /col-lg-4 -->
+                <div class="col-lg-3">
+                        <div style="text-align:right">Share Us On:</div>
+                        <div class="facebook" style="display:inline;float:right;">   <a href="https://www.facebook.com/WebRTC" class="socialite facebook-like" data-href="https://www.facebook.com/WebRTC" data-send="true" data-layout="box_count" data-width="60" data-show-faces="true" rel="nofollow" target="_blank"><span> </span></a></div>
+                        <div class="google" style="display:inline;float:right;"> <a href="https://plus.google.com/+WebRTCorg/posts" class="socialite googleplus-one" data-size="tall" data-href="https://plus.google.com/+WebRTCorg/posts" rel="nofollow" target="_blank"><span> </span></a></div>
+                </div><!-- /col-lg-4 -->
+            
+            </div>
+            <div class="row">
+                 <small style="font-size:10px;margin-bottom:15px;">© 2020 etc
+                    </small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
