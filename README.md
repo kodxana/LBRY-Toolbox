@@ -11,7 +11,7 @@ Things to do
 - [ ] Windows binaries
 - [ ] ARM binaries
 
-# How to start
+# How to start (Linux OS)
 
 ```
 ~/LBRY-Toolbox$ pip3 install -r dev-requirements.in
