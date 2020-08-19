@@ -14,6 +14,10 @@ Things to do
 # How to start
 
 ```
-pip3 install -r requirements.txt
-./start.sh
+~/LBRY-Toolbox$ pip3 install -r dev-requirements.in
+~/LBRY-Toolbox$ pip3 install -r requirements.in
+~/LBRY-Toolbox$ sudo apt-get install npm (if you haven't npm)
+~/LBRY-Toolbox$ npm install
+~/LBRY-Toolbox$ npm run start
+~/LBRY-Toolbox/backend$ python3 manage.py runserver
 ```
