@@ -11,9 +11,21 @@ Things to do
 - [ ] Windows binaries
 - [ ] ARM binaries
 
-# How to start
+# How to start (Linux OS)
 
 ```
-pip3 install -r requirements.txt
-./start.sh
+~/LBRY-Toolbox$ pip3 install -r dev-requirements.in
+~/LBRY-Toolbox$ pip3 install -r requirements.in
+~/LBRY-Toolbox$ sudo apt-get install npm (if you haven't npm)
+~/LBRY-Toolbox$ npm install
+~/LBRY-Toolbox$ npm run start
+~/LBRY-Toolbox/backend$ python3 manage.py runserver
+```
+
+# How to start (Windows 10)
+```
+~\LBRY-Toolbox> pip3 install -r dev-requirements.in
+~\LBRY-Toolbox> pip3 install -r -requirements.in
+~\LBRY-Toolbox> npm install
+~\ (to be continued)
 ```
