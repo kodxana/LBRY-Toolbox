@@ -38,7 +38,7 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = 'exampleapp/results.html'
 
-class Step1View(generic.ListView):
+class StepsView(generic.DetailView):
     template_name = 'exampleapp/step1.html'
 
 
