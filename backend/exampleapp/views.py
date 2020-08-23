@@ -38,6 +38,9 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = 'exampleapp/results.html'
 
+class Step1View(generic.ListView):
+    template_name = 'exampleapp/step1.html'
+
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
