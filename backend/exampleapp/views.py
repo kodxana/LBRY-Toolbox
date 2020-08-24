@@ -38,9 +38,6 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = 'exampleapp/results.html'
 
-class StepsView(generic.DetailView):
-    template_name = 'exampleapp/step1.html'
-
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -59,3 +56,7 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('exampleapp:results', args=(question.id,)))
+class Step1_View():
+    template_name='exampleapp/step1.html'
+    def step1_view(request):
+        return HttpResponse(html)
